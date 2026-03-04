@@ -1,0 +1,19 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+:root {
+    --cream-col: rgba(236, 242, 251);
+    --cream-col2: rgb(243, 247, 252);
+    --bg-col: rgb(226, 236, 246);
+}
+
+.box-shadow {
+    box-shadow: 5px 5px 5px rgba(166, 166, 166, 1), -1px -1px 5px rgba(216, 216, 216, 1);
+}
+
+html,
+body,
+.page-background {
+    background-color: var(--bg-col);
+}

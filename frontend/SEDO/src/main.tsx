@@ -1,0 +1,13 @@
+import { JSX, StrictMode, useState } from "react";
+import { createRoot } from "react-dom/client";
+import { ProvideAuth } from "./authentication/auth";
+
+import { App } from "./App";
+
+createRoot(document.getElementById("root")!).render(
+  <StrictMode>
+    <ProvideAuth>
+      <App />
+    </ProvideAuth>
+  </StrictMode>,
+);
