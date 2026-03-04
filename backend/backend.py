@@ -3,6 +3,7 @@ from typing import Annotated
 
 from fastapi import Depends, FastAPI, HTTPException, status
 from fastapi.security import OAuth2PasswordRequestForm
+from fastapi.middleware.cors import CORSMiddleware
 from sqlmodel import Session
 from sqlalchemy.sql.operators import is_
 
@@ -12,6 +13,18 @@ from database import engine, init_db_and_tables, get_session
 
 
 app = FastAPI()
+
+origins = [
+    "https://sedo-cwgf.onrender.com"
+]
+
+app.add_middleware(
+    CORSMiddleware,
+    allow_origins=origins,
+    allow_credentials=True,
+    allow_methods["*"],
+    allow_headers["*"],
+)
 
 @app.on_event("startup")
 def on_startup():
