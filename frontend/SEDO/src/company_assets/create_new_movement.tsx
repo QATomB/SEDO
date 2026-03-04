@@ -31,7 +31,7 @@ export default function CreateNewMovementPage(): JSX.Element {
   headers.set("Authorization", `Bearer ${token}`);
 
   useEffect(() => {
-    const assetRequest: RequestInfo = new Request("/api/asset/", {
+    const assetRequest: RequestInfo = new Request("https://sedo-backend.onrender.com/asset/", {
       method: "GET",
       headers: headers,
     });
@@ -44,7 +44,7 @@ export default function CreateNewMovementPage(): JSX.Element {
         res.json().then((err) => {});
       }
     });
-    const locationRequest: RequestInfo = new Request("/api/asset/location/", {
+    const locationRequest: RequestInfo = new Request("https://sedo-backend.onrender.com/asset/location/", {
       method: "GET",
       headers: headers,
     });
@@ -67,7 +67,7 @@ export default function CreateNewMovementPage(): JSX.Element {
       return;
     }
 
-    const movementRequest: RequestInfo = new Request("/api/asset/movements/", {
+    const movementRequest: RequestInfo = new Request("https://sedo-backend.onrender.com/asset/movements/", {
       method: "POST",
       headers: headers,
       body: JSON.stringify({
