@@ -61,7 +61,7 @@ function useProvideAuth(): ProvideAuthInterface {
     headers.set("Accept", "application/json");
     headers.set("Authorization", "Basic Og==");
 
-    const AuthRequest: RequestInfo = new Request("/api/token", {
+    const AuthRequest: RequestInfo = new Request("https://sedo-backend.onrender.com/token", {
       method: "POST",
       headers: headers,
       body: `grant_type=password&username=${employee_id}&password=${password}`,
@@ -77,7 +77,7 @@ function useProvideAuth(): ProvideAuthInterface {
           meHeaders.set("Accept", "application/json");
           meHeaders.set("Authorization", `Bearer ${auth_json.access_token}`);
 
-          const MeRequest: RequestInfo = new Request("/api/users/me/", {
+          const MeRequest: RequestInfo = new Request("https://sedo-backend.onrender.com/users/me/", {
             method: "GET",
             headers: meHeaders,
           });
@@ -116,7 +116,7 @@ function useProvideAuth(): ProvideAuthInterface {
     headers.set("Accept", "application/json");
     headers.set("Authorization", "Basic Og==");
 
-    const AuthRequest: RequestInfo = new Request("/api/users/", {
+    const AuthRequest: RequestInfo = new Request("https://sedo-backend.onrender.com/users/", {
       method: "POST",
       headers: headers,
       body: JSON.stringify({
