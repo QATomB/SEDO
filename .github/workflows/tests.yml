@@ -12,7 +12,8 @@ jobs:
     env:
       CI: true
       SECRET_KEY: testsecretkey
-      FLASK_ENV: test
+      ALGORITHM: HS256
+      ACCESS_TOKEN_EXPIRE_MINUTES: 30
       DB_NAME: temp_test.db
 
     steps:
