@@ -221,7 +221,7 @@ export default function UserTable() {
   headers.set("Authorization", `Bearer ${token}`);
 
   useEffect(() => {
-    const request: RequestInfo = new Request("/api/users/", {
+    const request: RequestInfo = new Request("https://sedo-backend.onrender.com/users/", {
       method: "GET",
       headers: headers,
     });
@@ -317,7 +317,7 @@ export default function UserTable() {
             onSubmit={(e: any) => {
               e.preventDefault();
               const updateUserReq: RequestInfo = new Request(
-                `/api/users/${selectedUser.employeeId}/`,
+                `https://sedo-backend.onrender.com/users/${selectedUser.employeeId}/`,
                 {
                   method: "PUT",
                   headers: headers,
@@ -420,7 +420,7 @@ export default function UserTable() {
                   )
                 ) {
                   const delteUserReq: RequestInfo = new Request(
-                    `/api/users/${selectedUser.employeeId}/`,
+                    `https://sedo-backend.onrender.com/users/${selectedUser.employeeId}/`,
                     {
                       method: "DELETE",
                       headers: headers,
