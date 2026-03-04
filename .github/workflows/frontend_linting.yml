@@ -13,7 +13,9 @@ jobs:
     steps:
       - uses: actions/checkout@v2
       - name: Prepare
-        run: npm i
+        run: |
+          cd frontend/SEDO/
+          npm i
       - name: Linter action
         id: linter
         uses: AntonKornus/TypeScript-Linter@1.0.0
