@@ -71,7 +71,7 @@ export default function AddItemPage(): JSX.Element {
     e.preventDefault();
 
     GenericPost(
-      "/api/asset/type/",
+      "https://sedo-backend.onrender.com/asset/type/",
       { type: newAssetType },
       () => newAssetType != "",
       `Asset Type "${newAssetType}" Added`,
@@ -82,7 +82,7 @@ export default function AddItemPage(): JSX.Element {
     e.preventDefault();
 
     GenericPost(
-      "/api/asset/location/",
+      "https://sedo-backend.onrender.com/asset/location/",
       {
         location_name: newLocation,
         location_colour: newLocationColour,
@@ -96,7 +96,7 @@ export default function AddItemPage(): JSX.Element {
     e.preventDefault();
 
     GenericPost(
-      "/api/asset/",
+      "https://sedo-backend.onrender.com/asset/",
       {
         type: chosenItemType,
         location_name: chosenLocation,
@@ -133,8 +133,8 @@ export default function AddItemPage(): JSX.Element {
   }
 
   useEffect(() => {
-    GenericGetList("/api/asset/type/", (json: any) => setAllItemTypes(json));
-    GenericGetList("/api/asset/location/", (json: any) =>
+    GenericGetList("https://sedo-backend.onrender.com/asset/type/", (json: any) => setAllItemTypes(json));
+    GenericGetList("https://sedo-backend.onrender.com/asset/location/", (json: any) =>
       setAllLocations(json),
     );
   }, []);
