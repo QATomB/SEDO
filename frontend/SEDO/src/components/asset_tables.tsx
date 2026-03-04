@@ -66,7 +66,7 @@ function AssetTables(): JSX.Element {
   headers.set("Authorization", `Bearer ${token}`);
 
   useEffect(() => {
-    const request: RequestInfo = new Request("/api/asset/movements/", {
+    const request: RequestInfo = new Request("https://sedo-backend.onrender.com/asset/movements/", {
       method: "GET",
       headers: headers,
     });
@@ -79,7 +79,7 @@ function AssetTables(): JSX.Element {
         res.json().then((err) => {});
       }
     });
-    const locationRequest: RequestInfo = new Request("/api/asset/location/", {
+    const locationRequest: RequestInfo = new Request("https://sedo-backend.onrender.com/asset/location/", {
       method: "GET",
       headers: headers,
     });
@@ -104,7 +104,7 @@ function AssetTables(): JSX.Element {
         res.json().then((err) => {});
       }
     });
-    const req: RequestInfo = new Request("/api/asset/", {
+    const req: RequestInfo = new Request("https://sedo-backend.onrender.com/asset/", {
       method: "GET",
       headers: headers,
     });
